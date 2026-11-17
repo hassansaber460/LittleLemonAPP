@@ -74,7 +74,7 @@ class LittleLemonAPITests(APITestCase):
         self.assertEqual(denied.status_code, 403)
         self.authenticate(self.crew)
         denied_update = self.client.patch(
-            reverse("menu-item-detail", args=[self.menu_item.title]), {"featured": True}, format="json
+            reverse("menu-item-detail", args=[self.menu_item.title]), {"featured": True}, format="json",
         )
         self.assertEqual(denied_update.status_code, 403)
         self.authenticate(self.manager)

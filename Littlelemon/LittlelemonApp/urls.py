@@ -1,4 +1,5 @@
 from django.urls import path
+
 from . import views
 
 
@@ -14,7 +15,7 @@ urlpatterns = [
     path("orders/<int:pk>/", views.SingleOrderView.as_view(), name="order-detail"),
     path(
         "groups/manager/users",
-        views.GroupViewSet.as_view({"get": "list", "post": "create", "delete": "destroy"}),
+        views.ManagerGroupViewSet.as_view({"get": "list", "post": "create", "delete": "destroy"}),
         name="manager-users",
     ),
     path(

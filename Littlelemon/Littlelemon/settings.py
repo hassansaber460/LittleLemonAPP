@@ -12,10 +12,10 @@ SECRET_KEY = os.environ.get(
     "django-insecure-local-development-only-change-me",
 )
 DEBUG = os.environ.get("DJANGO_DEBUG", "False").lower() in {"1", "true", "yes"}
-ALLOWED_HOSTS = [
-    host.strip()
-    for host in os.environ.get("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
-    if host.strip()
+ALLOWED_HOSTS =[
+    '127.0.0.1',
+    'localhost',
+    'vessel-happening-attendant.ngrok-free.dev'
 ]
 
 INSTALLED_APPS = [
@@ -82,7 +82,6 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_FRAMEWORK = {
     "DEFAULT_RENDERER_CLASSES": [
         "rest_framework.renderers.JSONRenderer",
-        "rest_framework.renderers.BrowsableAPIRenderer",
     ],
     "DEFAULT_FILTER_BACKENDS": [
         "rest_framework.filters.OrderingFilter",
